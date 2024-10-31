@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <style>
+      #head-imge{
+         width: 200px;
+         height: 200px;
+         border-radius: 100%;
+
+      }
+
+      .name{
+         margin-top: 80px;
+         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         padding: 5PX;
+      }
+
+      header{
+         width: 100%;
+        height: 200px;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        position: fixed;
+        top: 0;
+        left: 0;
+         background-color: darkcyan;
+        
+      }
+
+      nav > ul {
+        
+        display: flex;
+        font-size: 1.2rem;
+        margin-top: 80px;
+        list-style: none;
+      }
+
+      nav > ul > li {
+        margin: 0 40px;
+      }
+
+      nav > ul > li > a {
+        color: black;
+        
+      }
+
+         #add-button{
+            width: 120px;
+            height: 60px;
+           
+            border-radius: 20px;
+            background-color: darkturquoise;
+            color: black;
+            margin-left: 1200px;
+            font-size: 1rem;
+            border: none;
+         }
+         #view-button{
+            width: 120px;
+            height: 60px;
+         
+            border-radius: 20px;
+            background-color: yellow;
+            color: black;
+            border: none;
+            font-size: 1rem;
+         }
+         .item{
+            margin-top: 240px;
+           
+         }
+      .box-box1{
+         width: 400px;
+         height: 60px;
+         background-color: green;
+         box-shadow: 2px 4px;
+
+      }
+      .box-box2{
+         width: 400px;
+         height: 100px;
+         background-color: white;
+         box-shadow: 2px 4px;
+      }
+
+      #Search{
+         background-color: green;
+         width: 100px;
+         height: 30px;
+
+      }
+      #tech{
+         width: 100px;
+         height: 30px;
+
+      }
+      input{
+         width: 300px;
+         height: 30px;
+
+      }
+      #delete{
+         width: 100px;
+         height: 30px;
+         background-color: red;
+         color: white;
+         border: none;
+      }
+      #Details{
+         width: 100px;
+         height: 30px;
+         background-color: darkturquoise;
+         color: white;
+         border: none;
+
+      }
+      #Clear{
+         width: 100px;
+         height: 30px;
+         background-color: green;
+         color: white;
+         border: none;
+      
+      }
+
+      table,th,td{
+            border: 5PX solid black;
+            border-collapse: collapse;
+            width: 1500px;
+            height: 40px;
+            
+        }
+   </style>
+</head>
+<body>
+   <header>
+     
+<img id="head-imge" src="/images/logo6.webp" alt="">
+<div class="name">
+   <h1>THE HAWK POS SYSTEM</h1>
+
+</div>
+
+
+<nav>
+   <ul>
+      <li><a href="/index.html"></a>home</li>
+      <li><a href="/add -item.html"> </a>Item</li>
+      <li><a href="/"></a> Order</li>
+   </ul>
+</nav>
+   </header>
+<div class="item">
+   <h1>Item</h1>
+</div>
+   
+
+   <button id="add-button">Add Item</button>
+   
+   <button id="view-button" >view all item</button>
+
+
+   <div class="container">
+      <div class="box-box1">
+         <h1>Item Search</h1>
+      </div><br><br>
+      <div class="box-box2">
+         <input type="text" placeholder="input item name/label" maxlength="5"><br><br>
+
+         <button id="Search">Serach</button>
+   <select name="tachnology" id="tech">
+    <option value="java">Name</option>
+    <option value="paithon">Sunlight</option>
+    <option value="css">Soap</option>
+
+</select>
+      </div>
+
+   </div><br><br>
+
+   <button id="delete">Delete</button>
+   <button id="Details" >Details</button>
+   <button id="Clear">Clear</button>
+<br><br>
+
+   <table>
+      <thead>
+          <tr style=>
+              <th>Item code</th>
+              <th>Item Name</th>
+              <th>Quabtity</th>
+              <th>price</th>
+          </tr>
+      </thead>
+      <tbody>
+         <tr>
+             <td>001</td>
+             <td>SunLight</td>
+             <td>21</td>
+             <td>250.00</td>
+         </tr>
+         <tr>
+             <td>002</td>
+             <td>Brash</td>
+             <td>35</td>
+             <td>50.00</td>
+         </tr>
+         <tr>
+            <td>003</td>
+            <td>Biscuit</td>
+            <td>50</td>
+            <td>350.00</td>
+        </tr>
+
+     </tbody>
+</body>
+</html>
