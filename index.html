@@ -1,265 +1,342 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hawk POS System</title>
 
-   <style>
-    body{
-        background-color:darkcyan;
-    }
-      #head-imge{
-         width: 200px;
-         height: 200px;
-         border-radius: 100%;
-
-      }
-
-      .name{
-         margin-top: 80px;
-         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-         padding: 5PX;
-      }
-
-      header{
-         width: 100%;
-        height: 200px;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        padding: 12px;
-        position: fixed;
-        top: 0;
-        left: 0;
-         background-color: black;
-        
-      }
-
-      nav > ul {
-        
-        display: flex;
-        font-size: 1.2rem;
-        margin-top: 80px;
-        list-style: none;
-      }
-
-      nav > ul > li {
-        margin: 0 40px;
-      }
-
-      nav > ul > li > a {
-        color: white;
-        
-      }
-
-         #add-button{
-            width: 120px;
-            height: 60px;
-           
-            border-radius: 20px;
-            background-color: darkturquoise;
-            color: black;
-            margin-left: 1200px;
-            font-size: 1rem;
-            border: none;
-         }
-         #view-button{
-            width: 120px;
-            height: 60px;
-         
-            border-radius: 20px;
-            background-color: yellow;
-            color: black;
-            border: none;
-            font-size: 1rem;
-         }
-         .item{
-            margin-top: 240px;
-           
-         }
-.popup{
-  width: 500px;
-  background-color: rgb(213, 247, 247);
-  border-radius: 6px;
-  position: absolute;
-  top: -30%;
-  left: 50%;
-  transform: translate(-50%,-50%)scale(0.1);
-  text-align: center;
-  padding: 0 30px 30px;
-  color: black;
-  visibility: hidden;
-  transition: transform 0.4s, top 0.4s;
-}
-
-.open-popup{
-  visibility: visible;
-  top: 50%;
-  transform: translate(-50%,-50%)scale(1);
-}
-
-.popup img{
-  width: 160px;
-  height: 160px;
-  margin-top: -70px;
-}
-
-.popup h2{
-  font-size: 25px;
-  font-weight: 500;
-  margin: 30px 0 10px;
-}
-
-.popup .inputBox{
-  position: relative;
-  width: 100%;
-  margin-bottom: 5px;
-  margin-left: 0;
-  text-align: left;
-}
-
-
-.popup .inputBox .span{
-  position: absolute;
-  left: 0;
-  padding: 10px;
-  pointer-events: none;
-  font-size: 15px;
-  font-weight: 300;
-  transition: 0.5s;
-  margin-bottom: 10px;
-  margin-left: 10px;
-}
-
-
-.popup .inputBox input{
-        
-  width: 98%;
-  border: 1px solid #d6d2d2;
-  padding: 10px;
-  color: #111;
-  outline: none;
-  font-size: 15px;
-  font-weight: 300;
-  resize: none;
-  border-radius: 7px;
-  margin-top: 6px;
-}
-
-
-.popup button{
-  width: 100%;
-  margin-top: 50px;
-  padding: 10px 0;
-  background-color: #47e627;
-  color: black;
-  border: 0;
-  outline: none;
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 8px;
-  box-shadow: 10px 10px 10x 10px black;
-}
-      .box-box1{
-         width: 400px;
-         height: 60px;
-         background-color: green;
-         box-shadow: 2px 4px;
-
-      }
-      .box-box2{
-         width: 400px;
-         height: 100px;
-         background-color: white;
-         box-shadow: 2px 4px;
-      }
-
-      #Search{
-         background-color: green;
-         width: 100px;
-         height: 30px;
-
-      }
-      #tech{
-         width: 100px;
-         height: 30px;
-
-      }
-      input{
-         width: 300px;
-         height: 30px;
-
-      }
-      #delete{
-         width: 100px;
-         height: 30px;
-         background-color: red;
-         color: white;
-         border: none;
-      }
-      #Details{
-         width: 100px;
-         height: 30px;
-         background-color: darkturquoise;
-         color: white;
-         border: none;
-
-      }
-      #Clear{
-         width: 100px;
-         height: 30px;
-         background-color: green;
-         color: white;
-         border: none;
-      
-      }
-
-      table,th,td{
-            border: 5PX solid black;
-            border-collapse: collapse;
-            width: 1500px;
-            height: 40px;
-            
+    <style>
+        body {
+            background-color: darkcyan;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-   </style>
+
+        #head-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        .name {
+            margin-top: 80px;
+            padding: 5px;
+        }
+
+        header {
+            width: 100%;
+            height: 200px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            padding: 12px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: black;
+        }
+
+        nav > ul {
+            display: flex;
+            font-size: 1.2rem;
+            margin-top: 80px;
+            list-style: none;
+        }
+
+        nav > ul > li {
+            margin: 0 20px; 
+        }
+
+        nav > ul > li > a {
+            color: white;
+            text-decoration: none; 
+        }
+
+        #add-button,
+        #view-button {
+            width: 120px;
+            height: 60px;
+            border-radius: 20px;
+            color: black;
+            font-size: 1rem;
+            border: none;
+            margin-left: auto; 
+        }
+
+        #add-button {
+            background-color: darkturquoise;
+        }
+
+        #view-button {
+            background-color: yellow;
+        }
+
+        .item {
+            margin-top: 240px; 
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px; 
+        }
+
+        .box-box1,
+        .box-box2 {
+            width: 90%; 
+            max-width: 400px; 
+            box-shadow: 2px 4px;
+            margin: 20px auto; 
+        }
+
+        .box-box1 {
+            background-color: green;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            color: white;
+            font-size: 1.5em; 
+        }
+
+        .box-box2 {
+            background-color: white;
+            height: auto; 
+            padding: 10px;
+        }
+
+        input,
+        #Search,
+        #tech,
+        #delete,
+        #Details,
+        #Clear {
+            width: 100%; 
+            height: 40px;
+            margin-top: 10px;
+        }
+
+        #Search {
+            background-color: green;
+            color: white;
+            border: none; 
+        }
+
+        #tech {
+            border: 1px solid #d6d2d2; 
+            color: black;
+        }
+
+        #delete,
+        #Details,
+        #Clear {
+            background-color: darkturquoise; 
+            color: white;
+            border: none; 
+        }
+
+        #delete {
+            background-color: red; 
+        }
+
+        table {
+            width: 100%;
+            border: 5px solid black;
+            border-collapse: collapse;
+            background-color: white;
+            margin-top: 20px; 
+        }
+
+        th,
+        td {
+            border: 5px solid black; 
+            height: 40px;
+            text-align: center;
+        }
+
+        .popup {
+            width: 90%; 
+            max-width: 500px; 
+            background-color: rgb(213, 247, 247);
+            border-radius: 6px;
+            position: fixed; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 30px;
+            color: black;
+            visibility: hidden;
+            transition: transform 0.4s, visibility 0.4s;
+        }
+
+        .open-popup {
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .popup img {
+            width: 160px;
+            height: auto; 
+            margin-top: -70px;
+        }
+
+        .popup h2 {
+            font-size: 25px;
+            font-weight: 500;
+            margin: 30px 0 10px;
+        }
+
+        .popup .inputBox {
+            position: relative;
+            width: 100%;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .popup .inputBox span {
+            position: absolute;
+            left: 0;
+            padding: 10px;
+            pointer-events: none;
+            font-size: 15px;
+            font-weight: 300;
+            transition: 0.5s;
+        }
+
+        .popup .inputBox input {
+            width: 98%;
+            border: 1px solid #d6d2d2;
+            padding: 10px;
+            color: #111;
+            outline: none;
+            font-size: 15px;
+            font-weight: 300;
+            resize: none;
+            border-radius: 7px;
+            margin-top: 6px;
+        }
+
+        .popup button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: #47e627;
+            color: black;
+            border: 0;
+            outline: none;
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 8px;
+            box-shadow: 10px 10px 10px black;
+        }
+
+ 
+        @media (max-width: 1024px) {
+            header {
+                flex-direction: column;
+                align-items: center; 
+                text-align: center;
+            }
+
+            nav > ul {
+                flex-direction: column; 
+                margin-top: 10px;
+            }
+
+            .item {
+                margin-top: 100px; 
+            }
+
+            #add-button,
+            #view-button {
+                width: auto; 
+                margin: 10px 0; 
+            }
+        }
+
+        @media (max-width: 768px) {
+            #head-image {
+                width: 80px;
+                height: 80px;
+            }
+
+            .name h1 {
+                font-size: 1.5em;
+            }
+
+            .container {
+                padding: 10px; 
+            }
+
+            .box-box1,
+            .box-box2 {
+                width: 90%; 
+            }
+
+            table,
+            th,
+            td {
+                font-size: 0.9em; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            #head-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .name h1 {
+                font-size: 1.2em;
+            }
+
+            nav > ul {
+                font-size: 0.8rem; 
+            }
+
+            .item h1 {
+                font-size: 1.5em;
+            }
+
+            table,
+            th,
+            td {
+                font-size: 0.8em; }
+        }
+    </style>
 </head>
+
 <body>
-<header>
-     
-<img id="head-imge" src="/images/logo6.webp" alt="">
-<div class="name">
-   <h1>THE HAWK POS SYSTEM</h1>
+    <header>
+        <img id="head-image" src="/images/logo6.webp" alt="Hawk POS Logo">
+        <div class="name">
+            <h1>THE HAWK POS SYSTEM</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html">Item</a></li>
+                <li><a href="/Order.html">Order</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="item">
+        <h1>Item</h1>
+    </div>
 
-</div>
+    <button type="button" id="add-button" onclick="openPopup()">Add Item</button>
+    <button id="view-button">View All Items</button>
 
-
-<nav>
-   <ul>
-      <li><a href="/index.html">home</a></li>
-      <li><a href="/add -item.html"> Item</a></li>
-      <li><a href="/Order.html"> Order</a></li>
-      
-   </ul>
-</nav>
-   </header>
-<div class="item">
-   <h1>Item</h1>
-</div>
-   
-
-<button type="submit" class="btn" id="add-button" onclick="openPopup()">Add Item</button>
-   <button id="view-button" >view all item</button>
-
-
-
-   <div class="container">
-      <div class="box-box1">
-         <h1>Item Search</h1>
-      </div><br><br>
-      <div class="box-box2">
-         <input type="text" placeholder="input item name/label" maxlength="5"><br><br>
+    <div class="container">
+        <div class="box-box1">
+            <h1>Item Search</h1>
+        </div>
+        <div class="box-box2">
+            <input type="text" placeholder="Input item name/label" maxlength="5"><br>
+            <button id="Search">Search</button>
+            <select>
 
          <button id="Search">Serach</button>
    <select name="tachnology" id="tech">

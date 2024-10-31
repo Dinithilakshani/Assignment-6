@@ -6,123 +6,196 @@
    <title>Document</title>
 
    <style>
-    body{
-        background-color:darkcyan;
+body {
+    background-color: darkcyan;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#head-imge {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name h1 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 5px;
+}
+
+nav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav > ul > li {
+    margin: 0 15px;
+}
+
+nav > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+.item h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    animation: glow 1.5s infinite alternate;
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 300px; 
+}
+
+.box {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.header2 h2 {
+    margin: 0;
+    color: white;
+    background-color: green;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+
+table, th, td {
+    border: 5px solid black;
+    padding: 10px;
+    text-align: left;
+    background-color: white;
+}
+
+#Invoice, #select, #add-item, #Purchase {
+    width: 100%;
+    max-width: 120px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1rem;
+    border: none;
+    display: block;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99;
     }
-      #head-imge{
-         width: 200px;
-         height: 200px;
-         border-radius: 100%;
+    100% {
+        text-shadow: 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99, 0 0 50px #00ff99;
+    }
+}
 
-      }
 
-      .name{
-         margin-top: 80px;
-         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-         padding: 5PX;
-      }
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .name h1 {
+        font-size: 1.2em;
+    }
+    nav ul {
+        flex-direction: row;
+        font-size: 1rem;
+    }
+    .container {
+        margin-top: 250px; 
+    }
+}
 
-      header{
-         width: 100%;
-        height: 200px;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        padding: 12px;
-        position: fixed;
-        top: 0;
-        left: 0;
-         background-color: black;
-        
-      }
+@media (max-width: 768px) {
+    #head-imge {
+        width: 80px;
+        height: 80px;
+    }
+    .name h1 {
+        font-size: 1em;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .item h1 {
+        font-size: 1.5em;
+    }
+    table, th, td {
+        font-size: 0.9em;
+    }
+    #Invoice, #select, #add-item, #Purchase {
+        font-size: 0.9rem;
+        max-width: 100px;
+    }
+}
 
-      nav > ul {
-        
-        display: flex;
-        font-size: 1.2rem;
-        margin-top: 80px;
-        list-style: none;
-      }
+@media (max-width: 480px) {
+    #head-imge {
+        width: 60px;
+        height: 60px;
+    }
+    .name h1 {
+        font-size: 0.9em;
+    }
+    nav ul {
+        font-size: 0.8rem;
+    }
+    .item h1 {
+        font-size: 1.3em;
+    }
+    table, th, td {
+        font-size: 0.8em;
+    }
+    #Invoice, #select, #add-item, #Purchase {
+        font-size: 0.8rem;
+        max-width: 80px;
+    }
+}
 
-      nav > ul > li {
-        margin: 0 40px;
-      }
-
-      nav > ul > li > a {
-        color: white;
-        
-      }
-
-         #Invoice{
-            width: 120px;
-            height: 60px;
-           
-            border-radius: 20px;
-            background-color: darkturquoise;
-            color: black;
-            margin-left: 700px;
-            font-size: 1rem;
-            border: none;
-         }
-         #select{
-            width: 120px;
-            height: 60px;
-         
-            border-radius: 20px;
-            background-color: yellow;
-            color: black;
-            border: none;
-            font-size: 1rem;
-         }
-         .item{
-            margin-top: 240px;
-           
-         }
-
-         .container{
-            display: flex;
-            padding: 10px 10px;
-            margin: 0;
-         }
-     .box{
-        width: 500px;
-        height: 400px;
-        box-shadow: 3px 4px 4px;
-        margin-left: 100px;
-        background-color: white;
-        
-     }
-      
-     .header2{
-        background-color: green;
-     }
-
-     #Purchase{
-        width: 100px;
-        height: 50px;
-        background-color: green;
-        color: white;
-
-        margin-left: 200px;
-        border: none;
-     }
-      table,th,td{
-            border: 5PX solid black;
-            border-collapse: collapse;
-            width: 1500px;
-            height: 40px;
-            background-color: white;
-
-            
-        }
-        #add-item{
-            width: 100px;
-        height: 50px;
-        background-color: red;
-        border: none;
-        margin-left: 200px;
-        color: white;
-        }
         
    </style>
 </head>
@@ -139,7 +212,7 @@
 <nav>
    <ul>
       <li><a href="/index.html"></a></li>
-      <li><a href="/add -item.html"> Item</a></li>
+      <li><a href="index.html"> Item</a></li>
       <li><a href="/Order.html"></a> Order</li>
    </ul>
 </nav>
