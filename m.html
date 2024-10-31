@@ -6,9 +6,6 @@
    <title>Document</title>
 
    <style>
-    body{
-        background-color: black;
-    }
       #head-imge{
          width: 200px;
          height: 200px;
@@ -137,9 +134,66 @@
             border-collapse: collapse;
             width: 1500px;
             height: 40px;
-            background-color: white;
             
         }
+        .container {
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 250px;
+}
+
+h2 {
+    color: #2a9d8f;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+input, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #21867a;
+}
+
+#summary p {
+    margin: 5px 0;
+}
+
+#total {
+    color: blue;
+}
+
+#subtotal {
+    color: red;
+}
+
    </style>
 </head>
 <body>
@@ -165,33 +219,69 @@
 </div>
    
 
-   <button id="add-button">Add Item</button>
+<div class="container">
+    <!-- Invoice Details Section -->
+    <div class="section invoice-details">
+        <h2>Invoice Details</h2>
+        <label>Order ID:</label>
+        <input type="text" id="orderID" value="D001">
+        
+        <label>Date:</label>
+        <input type="date" id="date" value="2020-06-07">
+        
+        <label>Customer:</label>
+        <input type="text" id="customer" value="C003">
+        
+        <label>Name:</label>
+        <input type="text" id="name" value="Malitha">
+        
+        <label>Salary:</label>
+        <input type="number" id="salary" value="10000.00">
+        
+        <label>Address:</label>
+        <input type="text" id="address" value="Panadura">
+    </div>
+
+    <!-- Item Selection Section -->
+    <div class="section item-selection">
+        <h2>Item Select</h2>
+        <label>Item:</label>
+        <input type="text" id="itemCode" value="P002">
+        
+        <label>Item Name:</label>
+        <input type="text" id="itemName" value="Keerisamba 5Kg">
+        
+        <label>Price:</label>
+        <input type="number" id="price" value="525.00">
+        
+        <label>Order Quantity:</label>
+        <input type="number" id="orderQuantity" value="2">
+        
+        <button onclick="addItem()">Add Item</button>
+    </div>
+
+    <!-- Total Section -->
+    <div class="section total-section">
+        <h2>Totals</h2>
+        <label>Cash:</label>
+        <input type="number" id="cash" value="5000">
+        
+        <label>Discount:</label>
+        <input type="number" id="discount" value="10">
+        
+        <div id="summary">
+            <p>Total: <span id="total">1050 Rs/=</span></p>
+            <p>SubTotal: <span id="subtotal">945 Rs/=</span></p>
+            <p>Balance: <span id="balance">4055 Rs/=</span></p>
+        </div>
+        
+        <button onclick="purchase()">Purchase</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
    
-   <button id="view-button" >view all item</button>
-
-
-   <div class="container">
-      <div class="box-box1">
-         <h1>Item Search</h1>
-      </div><br><br>
-      <div class="box-box2">
-         <input type="text" placeholder="input item name/label" maxlength="5"><br><br>
-
-         <button id="Search">Serach</button>
-   <select name="tachnology" id="tech">
-    <option value="java">Name</option>
-    <option value="paithon">Sunlight</option>
-    <option value="css">Soap</option>
-
-</select>
-      </div>
-
-   </div><br><br>
-
-   <button id="delete">Delete</button>
-   <button id="Details" >Details</button>
-   <button id="Clear">Clear</button>
-<br><br>
 
    <table>
       <thead>

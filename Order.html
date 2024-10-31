@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <style>
+    body{
+        background-color: black;
+    }
+      #head-imge{
+         width: 200px;
+         height: 200px;
+         border-radius: 100%;
+
+      }
+
+      .name{
+         margin-top: 80px;
+         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         padding: 5PX;
+      }
+
+      header{
+         width: 100%;
+        height: 200px;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        position: fixed;
+        top: 0;
+        left: 0;
+         background-color: darkcyan;
+        
+      }
+
+      nav > ul {
+        
+        display: flex;
+        font-size: 1.2rem;
+        margin-top: 80px;
+        list-style: none;
+      }
+
+      nav > ul > li {
+        margin: 0 40px;
+      }
+
+      nav > ul > li > a {
+        color: black;
+        
+      }
+
+         #Invoice{
+            width: 120px;
+            height: 60px;
+           
+            border-radius: 20px;
+            background-color: darkturquoise;
+            color: black;
+            margin-left: 700px;
+            font-size: 1rem;
+            border: none;
+         }
+         #select{
+            width: 120px;
+            height: 60px;
+         
+            border-radius: 20px;
+            background-color: yellow;
+            color: black;
+            border: none;
+            font-size: 1rem;
+         }
+         .item{
+            margin-top: 240px;
+           
+         }
+
+         .container{
+            display: flex;
+            padding: 10px 10px;
+            margin: 0;
+         }
+     .box{
+        width: 500px;
+        height: 400px;
+        box-shadow: 3px 4px 4px;
+        margin-left: 100px;
+        background-color: white;
+        
+     }
+      
+     .header2{
+        background-color: green;
+     }
+
+     #Purchase{
+        width: 100px;
+        height: 50px;
+        background-color: green;
+        color: white;
+
+        margin-left: 200px;
+        border: none;
+     }
+      table,th,td{
+            border: 5PX solid black;
+            border-collapse: collapse;
+            width: 1500px;
+            height: 40px;
+            background-color: white;
+            
+            
+        }
+        #add-item{
+            width: 100px;
+        height: 50px;
+        background-color: red;
+        border: none;
+        margin-left: 200px;
+        color: white;
+        }
+        
+   </style>
+</head>
+<body>
+   <header>
+     
+<img id="head-imge" src="/images/logo6.webp" alt="">
+<div class="name">
+   <h1>THE HAWK POS SYSTEM</h1>
+
+</div>
+
+
+<nav>
+   <ul>
+      <li><a href="/index.html"></a>home</li>
+      <li><a href="/add -item.html"> </a>Item</li>
+      <li><a href="/Order.html"></a> Order</li>
+   </ul>
+</nav>
+   </header>
+<div class="item">
+   <h1>Order</h1>
+</div>
+   
+
+   
+
+
+
+  
+
+   
+
+   <div class="container">
+    <div class="box">
+        <div class="header2">
+            <h2>Invoice Details</h2>
+
+        </div>
+
+       
+        
+        <label>Order ID:</label>
+        <input type="text" id="orderID" value="D001"><br><br><br>
+        
+        <label>Date:</label>
+        <input type="date" id="date" value="2020-06-07"><br><br><br>
+        
+         <label>Customer:</label>
+         <input type="text" id="customer" value="C003"><br><br><br> 
+        
+        <label>Name:</label>
+        <input type="text" id="name" value="Malitha"><br><br><br>
+        
+         <label>Salary:</label>
+        <input type="number" id="salary" value="10000.00"><br><br><br>
+        
+        <label>Address:</label>
+        <input type="text" id="address" value="Panadura"><br>
+    </div>  
+    
+    <div class="box">
+        <div class="header2">        <h2>Item Select</h2>
+        </div>
+        <label>Item:</label>
+        <input type="text" id="itemCode" value="P002"><br><br><br>
+        
+        <label>Item Name:</label>
+        <input type="text" id="itemName" value="Keerisamba 5Kg"><br><br><br>
+        
+        <label>Price:</label>
+        <input type="number" id="price" value="525.00"><br><br><br>
+        
+        <label>Order Quantity:</label>
+        <input type="number" id="orderQuantity" value="2"><br><br><br><br><br>
+
+        <button id="add-item">Add Item</button>
+        
+    </div>
+    <div class="box">
+        <div class="header2">            <h2>Totals</h2>
+    
+        </div>
+        <label>Cash:</label>
+        <input type="number" id="cash" value="5000"><br><br><br>
+        
+        <label>Discount:</label>
+        <input type="number" id="discount" value="10"><br><br><br>
+        
+        <div id="summary">
+            <p>Total: <span id="total">1050 Rs/=</span></p>
+            <p>SubTotal: <span id="subtotal">945 Rs/=</span></p>
+            <p>Balance: <span id="balance">4055 Rs/=</span></p>
+        </div><br><br>
+        
+        <button id="Purchase" >Purchase</button>
+    </div>
+    </div>
+
+
+   </div>
+
+<br><br>
+
+   <table>
+      <thead>
+          <tr style=>
+              <th>Item code</th>
+              <th>Item Name</th>
+              <th>Quabtity</th>
+              <th>price</th>
+              <th>Total</th>
+
+          </tr>
+      </thead>
+      <tbody>
+         <tr>
+             <td>001</td>
+             <td>SunLight</td>
+             <td>21</td>
+             <td>250.00</td>
+             <td> 1455.00</td>
+         </tr>
+         <tr>
+             <td>002</td>
+             <td>Brash</td>
+             <td>35</td>
+             <td>550.00</td>
+             <td>22000.00</td>
+         </tr>
+         <tr>
+            <td>003</td>
+            <td>Biscuit</td>
+            <td>50</td>
+            <td>350.00</td>
+            <td>6890.00</td>
+        </tr>
+
+     </tbody>
+</body>
+</html>
