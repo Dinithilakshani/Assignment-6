@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
 
    <style>
     body{
-        background-color: black;
+        background-color:darkcyan;
     }
       #head-imge{
          width: 200px;
@@ -25,14 +26,14 @@
       header{
          width: 100%;
         height: 200px;
-        color: black;
+        color: white;
         display: flex;
         justify-content: space-between;
         padding: 12px;
         position: fixed;
         top: 0;
         left: 0;
-         background-color: darkcyan;
+         background-color: black;
         
       }
 
@@ -49,7 +50,7 @@
       }
 
       nav > ul > li > a {
-        color: black;
+        color: white;
         
       }
 
@@ -78,6 +79,89 @@
             margin-top: 240px;
            
          }
+.popup{
+  width: 500px;
+  background-color: rgb(213, 247, 247);
+  border-radius: 6px;
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translate(-50%,-50%)scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: black;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%,-50%)scale(1);
+}
+
+.popup img{
+  width: 160px;
+  height: 160px;
+  margin-top: -70px;
+}
+
+.popup h2{
+  font-size: 25px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup .inputBox{
+  position: relative;
+  width: 100%;
+  margin-bottom: 5px;
+  margin-left: 0;
+  text-align: left;
+}
+
+
+.popup .inputBox .span{
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 15px;
+  font-weight: 300;
+  transition: 0.5s;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+
+.popup .inputBox input{
+        
+  width: 98%;
+  border: 1px solid #d6d2d2;
+  padding: 10px;
+  color: #111;
+  outline: none;
+  font-size: 15px;
+  font-weight: 300;
+  resize: none;
+  border-radius: 7px;
+  margin-top: 6px;
+}
+
+
+.popup button{
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background-color: #47e627;
+  color: black;
+  border: 0;
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 10px 10px 10x 10px black;
+}
       .box-box1{
          width: 400px;
          height: 60px;
@@ -137,13 +221,12 @@
             border-collapse: collapse;
             width: 1500px;
             height: 40px;
-            background-color: white;
             
         }
    </style>
 </head>
 <body>
-   <header>
+<header>
      
 <img id="head-imge" src="/images/logo6.webp" alt="">
 <div class="name">
@@ -155,8 +238,9 @@
 <nav>
    <ul>
       <li><a href="/index.html">home</a></li>
-      <li><a href="/index.html">Item</a></li>
-      <li><a href="/Order.html">Orders</a> </li>
+      <li><a href="/add -item.html"> Item</a></li>
+      <li><a href="/Order.html"> Order</a></li>
+      
    </ul>
 </nav>
    </header>
@@ -165,9 +249,9 @@
 </div>
    
 
-   <button id="add-button">Add Item</button>
-   
+<button type="submit" class="btn" id="add-button" onclick="openPopup()">Add Item</button>
    <button id="view-button" >view all item</button>
+
 
 
    <div class="container">
@@ -194,6 +278,49 @@
 <br><br>
 
    <table>
+         <div class="popup" id="popup">
+      <img src="/images/logo6.webp" height="600px" width="600px" alt="">
+      <h2>Add Item</h2>
+      <form>
+          <div class="inputBox">
+              <span> Item Code</span>
+              <input type="text" name="" required="required">
+              
+            </div>
+  
+            <div class="inputBox">
+              <span>Item Name</span>
+              <input type="text" name="" required="required">
+             
+            </div>
+  
+            
+            <div class="inputBox">
+              <span>Quantity</span>
+              <input type="text" name="" required="required">
+             
+            </div>
+
+            
+            <div class="inputBox">
+              <span>Price</span>
+              <input type="text" name="" required="required">
+             
+            </div>
+           
+          <button type="button" onclick="closePopup()">Save</button>
+      </form>
+  </div>
+  <script>
+   let popup = document.getElementById("popup");
+
+   function openPopup(){
+       popup.classList.add("open-popup");
+   }
+   function closePopup(){
+      popup.classList.remove("open-popup")
+   }
+   </script>
       <thead>
           <tr style=>
               <th>Item code</th>
